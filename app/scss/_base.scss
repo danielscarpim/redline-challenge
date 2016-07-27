@@ -1,0 +1,24 @@
+body {
+  overflow: hidden;
+}
+
+.section {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $light-gray;
+  overflow-y: scroll;
+}
+
+.page-content {
+  max-width: 960px;
+  height: 1200px;
+  margin: 20px auto;
+  background: $white;
+  padding: 40px;
+}
+.content {
+  height: 100%;
+}
