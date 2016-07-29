@@ -38,10 +38,10 @@ module.exports = {
           'css-loader?sourceMap!sass-loader?sourceMap')
       },{
         test: /\.(jpg|png)$/,
-        loader: 'file-loader?name=./images/[name].[ext]',
+        loader: 'file-loader?name=[name].[ext]',
       },{
         test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        loader : 'file-loader?name=./fonts/[name].[ext]'
+        loader : 'file-loader?name=[name].[ext]'
       }]
     },
     plugins: [
@@ -51,7 +51,7 @@ module.exports = {
         template: './app/index.html',
         inject: 'body'
       }),
-      new ExtractTextPlugin("./css/[name].css"),
+      new ExtractTextPlugin("[name].css"),
       new CopyWebpackPlugin([
         {
           from: "app/templates",
