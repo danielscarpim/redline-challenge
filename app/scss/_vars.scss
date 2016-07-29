@@ -8,3 +8,8 @@ $black: #000;
 $light-gray: #eeeeee;
 $medium-gray: #666666;
 $dark-gray: #1e1e1e;
+
+$border-gray: darken($light-gray, 5);
+
+$breakpoint-medium: 900px;
+$breakpoint-small: 600px;

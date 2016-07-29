@@ -1,32 +1,4 @@
 @import 'vars';
 @import 'base';
 @import 'menu';
-
-body {
-  margin: 0;
-}
-
-ins {
-    color: #689f38;
-    text-decoration: none;
-}
-
-ins.new {
-    background: #fff9c4;
-}
-
-del {
-    color: #e53935;
-    display: inline;
-    text-decoration: line-through;
-}
-
-delacc {
-    display: none;
-}
-
-insacc {
-    background: none;
-    text-decoration: none;
-    display: inline;
-}
+@import 'content';

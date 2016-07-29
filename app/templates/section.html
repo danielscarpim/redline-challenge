@@ -1,13 +1,38 @@
 
 <div class="section">
 	<div class="menu">
-		<button class="draft-checkin">checkin</button>
-		<button class="change-save">save</button>
-		<button class="change-discard">discard</button>
-		<button class="decide-accept">accept</button>
-		<button class="decide-decline">decline</button>
+		<div class="logo"></div>
+		<div class="button-group">
+			<button ng-click="action('checkin')" class="button draft-checkin">
+				<i class="icon ion-plus"></i>
+				<span class="text">checkin</span>
+				<span class="tooltip">Check in draft</span>
+			</button>
+			<button ng-click="action('save')" class="button change-save">
+				<i class="icon ion-upload"></i>
+				<span class="text">save</span>
+				<span class="tooltip">Save changes</span>
+			</button>
+			<button ng-click="action('discard')" class="button change-discard">
+				<i class="icon ion-trash-b"></i>
+				<span class="text">discard</span>
+				<span class="tooltip">Discard changes</span>
+			</button>
+			<button ng-click="action('accept')" class="button decide-accept">
+				<i class="icon ion-checkmark"></i>
+				<span class="text">accept</span>
+				<span class="tooltip">Accept changes</span>
+			</button>
+			<button ng-click="action('decline')" class="button decide-decline">
+				<i class="icon ion-close"></i>
+				<span class="text">decline</span>
+				<span class="tooltip">Decline changes</span>
+			</button>
+		</div>
 	</div>
-	<div class="page-content">
-		<div class="content" contenteditable="true" ng-bind-html="redlinedata.html"></div>
+	<div class="page-container">
+		<div class="page">
+			<div class="content" contenteditable="true" ng-model="pageContent" ng-bind-html="redlinedata.html"></div>
+		</div>
 	</div>
 </div>

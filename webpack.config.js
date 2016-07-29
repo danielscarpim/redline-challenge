@@ -27,11 +27,21 @@ module.exports = {
               presets: ['es2015']
             }
       },{
+        test: /\.css$/,
+        exclude: [/node_modules/],
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+      },{
         test: /\.scss$/,
         exclude: [/node_modules/],
         loader: ExtractTextPlugin.extract(
           'style-loader',
           'css-loader?sourceMap!sass-loader?sourceMap')
+      },{
+        test: /\.(jpg|png)$/,
+        loader: 'file-loader?name=[name].[ext]',
+      },{
+        test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader : 'file-loader?name=[name].[ext]'
       }]
     },
     plugins: [
@@ -50,6 +60,9 @@ module.exports = {
       ]),
     ],
     cssLoader: {
-      includePaths: [path.resolve(__dirname, "bower_components")]
+      includePaths: [path.resolve(__dirname, "node_modules")]
+    },
+    sassLoader: {
+      includePaths: [path.resolve(__dirname, "node_modules")]
     }
 };

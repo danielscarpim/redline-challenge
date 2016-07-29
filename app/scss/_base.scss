@@ -1,24 +1,36 @@
-body {
-  overflow: hidden;
-}
-
-.section {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: $light-gray;
-  overflow-y: scroll;
-}
-
-.page-content {
-  max-width: 960px;
-  height: 1200px;
-  margin: 20px auto;
-  background: $white;
-  padding: 40px;
-}
-.content {
+html, body {
   height: 100%;
+}
+
+body {
+  background: $light-gray;
+  background: url('../images/debut_light.png');
+  font-family: 'Roboto', sans-serif;
+  padding-top: 77px;
+}
+
+*:focus {
+  outline: none;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+div, button, span {
+  box-sizing: border-box;
+  &:after,&:before{
+    box-sizing: border-box;
+  }
+}
+
+// Responsive media query
+@media (max-width: $breakpoint-medium) {
+  body {
+    padding-top: 0;
+  }
 }

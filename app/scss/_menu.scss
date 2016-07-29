@@ -1,4 +1,138 @@
 .menu {
   background: $white;
-  padding: 10px;
+  padding: 10px 20px;
+  border-bottom: 1px solid $border-gray;
+  box-shadow: 0 1px 5px fade-out($black, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  @extend .clearfix;
+
+  .logo {
+    width: 180px;
+    height: 32px;
+    margin-top: 5px;
+    background: url('../images/smashdocs_logo_6.png') no-repeat;
+    background-size: contain;
+    float: left;
+  }
+
+  .button-group {
+    float: right;
+  }
+
+  .button {
+    background: $white;
+    border: none;
+    outline: none;
+    padding: 0.75em 1.5em;
+    border-radius: 3px;
+    transition: all .1s ease-out;
+    position: relative;
+    float: left;
+    .text {
+      font-size: 0.8em;
+      color: $blue;
+      text-transform: uppercase;
+      text-shadow: 0 1px 1px $white;
+    }
+
+    &:hover {
+      background: $blue;
+      box-shadow: 0 1px 0 darken($blue,10);
+      .text {
+        color: $white;
+        text-shadow: 0 1px 1px darken($blue,10);
+      }
+      .icon {
+        color: $dark-gray;
+      }
+      .tooltip {
+        opacity: 1;
+        transform: translate3d(-50%,0,0);
+      }
+    }
+    &:active {
+      background: darken($blue,20);
+      transform: translateY(2px);
+      .text {
+        text-shadow: 0 1px 1px darken($blue,30);
+      }
+    }
+    .icon {
+      margin-right: 0.25em;
+      font-size: 1.3em;
+      color: darken($light-gray,30);
+      vertical-align: middle;
+    }
+  }
+  .tooltip {
+    z-index: 5;
+    position: absolute;
+    display: block;
+    top: 120%;
+    width: 80%;
+    background: $dark-gray;
+    padding: 0.5em;
+    color: $light-gray;
+    left: 50%;
+    transform: translate3d(-50%,10px,0);
+    font-size: 0.75em;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px fade-out($black,0.8);
+    pointer-events: none;
+    transition: all .2s ease-out;
+    transition-delay: .2s;
+    opacity: 0;
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -12px;
+      height: 3px;
+      width: 3px;
+      border: 6px solid transparent;
+      border-bottom-color: $dark-gray;
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: $breakpoint-medium) {
+  .menu {
+    position: relative;
+    padding: 10px;
+    .logo {
+      margin: 0 auto;
+      float: none;
+    }
+    .button-group {
+      margin-top: 20px;
+      width: 100%;
+    }
+    .button {
+      width: calc(100%/5);
+      padding: 0.75em;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .menu {
+    padding: 10px 0 0;
+    .button {
+      padding: 0.75em 0;
+      border-radius: 0;
+      &:active {
+        transform: none;
+      }
+      .icon {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.25em;
+      }
+    }
+  }
 }

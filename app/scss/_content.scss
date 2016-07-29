@@ -1,0 +1,68 @@
+.page-container {
+  padding: 20px;
+}
+.page {
+  width: 780px;
+  height: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: $white;
+  box-shadow: 0 2px 12px fade-out($black, 0.9);
+}
+.content {
+  height: 100%;
+  padding: 60px;
+  border: 1px solid $border-gray;
+  &:hover {
+    // Subtle hover style
+    border-color: darken($border-gray,7.5);
+  }
+  &:focus {
+    // Darken the contour a little bit, just to show the selected page
+    border-color: darken($border-gray,15);
+    del {
+      display: none;
+    }
+  }
+}
+
+ins {
+    color: #689f38;
+    text-decoration: none;
+}
+
+ins.new {
+    background: #fff9c4;
+}
+
+del {
+    color: #e53935;
+    display: inline;
+    text-decoration: line-through;
+}
+
+delacc {
+    display: none;
+}
+
+insacc {
+    background: none;
+    text-decoration: none;
+    display: inline;
+}
+
+// Responsive Styles
+@media (max-width: $breakpoint-medium) {
+  .content {
+    padding: 40px;
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .page-container {
+    padding: 10px;
+  }
+  .content {
+    padding: 20px;
+  }
+}

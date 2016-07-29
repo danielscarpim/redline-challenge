@@ -1,21 +1,25 @@
 'use strict';
 
+// I split the controller, directives to different files and imported them below
 import angular from 'angular';
-
-import Controller from './components/controllers/Controller.js';
+import MainController from './components/controllers/MainController.js';
 import section from './components/directives/section.js';
 import dataFactory from './components/services/dataFactory.js'
+
 // Stylesheets
+import "!style!css!html5-boilerplate-npm/css/main.css";
+import "!style!css!html5-boilerplate-npm/css/normalize.css";
+import '!style!css!ionicons-npm/css/ionicons.css';
 import './scss/main.scss';
 
-// Declare app level module which depends on views, and components
+// Images
+import './images/favicon.png';
+
+
+// Here I'm just declaring each component.
 angular.module('myApp', [])
-.controller('Controller', Controller)
+.controller('MainController', MainController)
 .directive('section', section)
 .factory('dataFactory', dataFactory)
-  //'ngRoute',
-  //'redlineDirective'
-// ]).
-// config(['$routeProvider', function($routeProvider) {
-//   $routeProvider.otherwise({redirectTo: '/view1'});
-// }]);
+
+// I removed ngRoute, since we are not using routing
